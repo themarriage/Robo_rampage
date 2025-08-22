@@ -1,6 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://5dey8sm7vgx7"]
+[gd_scene load_steps=7 format=3 uid="uid://5dey8sm7vgx7"]
 
 [ext_resource type="PackedScene" uid="uid://cm1shj8hk86bx" path="res://Scenes/player.tscn" id="1_d7bho"]
+[ext_resource type="Material" uid="uid://bhw85vuf6llbc" path="res://Materials/black.tres" id="1_y0mvb"]
+[ext_resource type="Material" uid="uid://dddlvsix36tf3" path="res://Materials/Purp.tres" id="2_2b6ht"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_cyy3s"]
 sky_top_color = Color(0.406968, 0.578621, 0.650564, 1)
@@ -30,6 +32,15 @@ environment = SubResource("Environment_2b6ht")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 use_collision = true
 size = Vector3(64, 1, 64)
+material = ExtResource("1_y0mvb")
 
 [node name="Player" parent="." instance=ExtResource("1_d7bho")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="Level Objects" type="Node" parent="."]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Level Objects"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0.5, 0)
+use_collision = true
+size = Vector3(1, 1, 6)
+material = ExtResource("2_2b6ht")
